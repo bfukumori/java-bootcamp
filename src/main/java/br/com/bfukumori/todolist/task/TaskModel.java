@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,7 +13,7 @@ import jakarta.persistence.Id;
 import lombok.Data;
 
 @Data
-@Entity(name="tb_tasks")
+@Entity(name = "tb_tasks")
 public class TaskModel {
 
     @Id
@@ -31,5 +32,8 @@ public class TaskModel {
 
     @CreationTimestamp
     private LocalDateTime createdAt;
-    
+
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
 }
